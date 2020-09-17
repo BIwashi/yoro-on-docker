@@ -1,0 +1,14 @@
+version: '3'
+services:
+  yoro:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: yoro_container
+    image: biwashi/yoro3
+    tty: true
+    # カレントディレクトリとコンテナ内のuer/src/appをボリューム
+    volumes:
+      - ./:/root/work/temp
+    ports:
+      - "8080:8080"
